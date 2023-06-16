@@ -2,10 +2,10 @@ import Note
 
 
 def write_file(array, mode):
-    file = open("notes.json", mode='w', encoding='utf-8')
+    file = open("notes.csv", mode='w', encoding='utf-8')
     file.seek(0)
     file.close()
-    file = open("notes.json", mode=mode, encoding='utf-8')
+    file = open("notes.csv", mode=mode, encoding='utf-8')
     for notes in array:
         file.write(Note.Note.to_string(notes))
         file.write('\n')
@@ -15,7 +15,7 @@ def write_file(array, mode):
 def read_file():
     try:
         array = []
-        file = open("notes.json", "r", encoding='utf-8')
+        file = open("notes.csv", "r", encoding='utf-8')
         notes = file.read().strip().split("\n")
         for n in notes:
             split_n = n.split(';')

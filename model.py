@@ -30,8 +30,8 @@ def show_all():
 def show_date():
     bul = True
     array = file.read_file()
+    date = input('Введите дату в формате дд.мм.гггг: ')
     for notes in array:
-        date = input('Введите дату в формате дд.мм.гггг: ')
         if date in Note.Note.get_date(notes):
             print(Note.Note.map_note(notes))
             bul = False
