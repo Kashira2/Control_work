@@ -1,1 +1,2 @@
 import controller
+controller.run()
